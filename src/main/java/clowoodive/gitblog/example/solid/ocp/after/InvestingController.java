@@ -20,14 +20,9 @@ public class InvestingController {
         private int investingAmount;
     }
 
-    private GoldInvestingService goldInvestingService;
-    private FundInvestingService fundInvestingService;
     private InvestingServiceFactory investingServiceFactory;
 
-    public InvestingController(GoldInvestingService goldInvestingService, FundInvestingService fundInvestingService,
-                               InvestingServiceFactory investingServiceFactory) {
-        this.goldInvestingService = goldInvestingService;
-        this.fundInvestingService = fundInvestingService;
+    public InvestingController(InvestingServiceFactory investingServiceFactory) {
         this.investingServiceFactory = investingServiceFactory;
     }
 
