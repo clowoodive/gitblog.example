@@ -5,9 +5,11 @@ import clowoodive.gitblog.example.codingtest.CodingTest1;
 import clowoodive.gitblog.example.dfs.Dfs;
 import clowoodive.gitblog.example.zoneddatetime.ZonedDateTimeService;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -17,6 +19,17 @@ public class ExampleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ExampleApplication.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner demoCommandLineRunner2() {
+        return args -> {
+            System.out.println("========== CommandLineRunner2 ==========");
+            for (var arg : args) {
+                System.out.println("arg : " + arg);
+            }
+            System.out.println("=======================================");
+        };
     }
 
     //    @Bean
